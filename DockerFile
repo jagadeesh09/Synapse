@@ -14,3 +14,15 @@ RUN CUDNN_DOWNLOAD_SUM=a87cb2df2e5e7cc0a05e266734e679ee1a2fadad6f06af82a76ed81a2
     tar -xzf cudnn-8.0-linux-x64-v5.1.tgz -C /usr/local --wildcards 'cuda/lib64/libcudnn.so.*' && \
     rm cudnn-8.0-linux-x64-v5.1.tgz && \
     ldconfig
+
+FROM python
+RUN apt-get install python-pip
+RUN pip install pydicom
+RUN pip install scikit-image
+RUN pip install numpy
+RUN pip install scipy
+RUN pip install matplotlib
+RUN pip install Pillow
+RUN apt-get install -y git-all
+RUN git clone https://github.com/wnd-charm/wnd-charm.git
+cd 
